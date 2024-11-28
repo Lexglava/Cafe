@@ -14,3 +14,13 @@ document.querySelector('#reservation-form').addEventListener('submit', (e) => {
     e.preventDefault();
     alert('Reservation submitted!');
 });
+function scrollToSection(id) {
+    const section = document.querySelector(id);
+    section.scrollIntoView({ behavior: 'smooth' });
+}
+const form = document.getElementById('reservation-form');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Reservation submitted successfully!');
+    form.reset();
+});
