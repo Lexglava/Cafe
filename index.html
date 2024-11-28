@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Hub</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Coffee Hub</h1>
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#menu">Menu</a>
+            <a href="#reservation">Reserve a Table</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h2>Welcome to Coffee Hub</h2>
+        <p>Your cozy coffee place in town.</p>
+        <button onclick="scrollToSection('#menu')">View Menu</button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h3>About Us</h3>
+        <p>Coffee Hub is the perfect place to enjoy freshly brewed coffee and relax with friends.</p>
+        <img src="https://via.placeholder.com/600x300" alt="Cafe Interior" style="width: 100%; max-width: 600px; margin-top: 1rem;">
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h3>Our Menu</h3>
+        <ul style="list-style: none; padding: 0;">
+            <li><strong>Espresso</strong> - $2.50</li>
+            <li><strong>Cappuccino</strong> - $3.50</li>
+            <li><strong>Latte</strong> - $4.00</li>
+            <li><strong>Mocha</strong> - $4.50</li>
+        </ul>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation">
+        <h3>Reserve a Table</h3>
+        <form id="reservation-form">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="phone">Phone:</label><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+            <label for="date">Date:</label><br>
+            <input type="date" id="date" name="date" required><br><br>
+            <label for="time">Time:</label><br>
+            <input type="time" id="time" name="time" required><br><br>
+            <button type="submit">Reserve</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Coffee Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Прокрутка к секции
+        function scrollToSection(id) {
+            const section = document.querySelector(id);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Простая обработка формы
+        const form = document.getElementById('reservation-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Reservation submitted successfully!');
+            form.reset();
+        });
+    </script>
+</body>
+</html>
